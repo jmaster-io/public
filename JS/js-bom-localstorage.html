@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>LocalStorage Javascript</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script>
+        //set du lieu vao
+        localStorage.setItem("username", "Trung Tam Java")
+
+        let username = localStorage.getItem("username")
+
+        console.log(username)
+        document.getElementById("root").innerHTML = username;
+
+        //luu doi tuong js vao localstorage
+        let user = {
+            id: 1,
+            name: 'Java Master',
+            age: 20,
+            address: 'Ha Dong, Ha Noi'
+        }
+
+        localStorage.setItem("user", JSON.stringify(user))
+
+        //doc ra
+        const u = localStorage.getItem("user")
+
+        if (u) {
+            const uObject = JSON.parse(u);
+            console.log(uObject)
+        }
+    </script>
+</body>
+
+</html>

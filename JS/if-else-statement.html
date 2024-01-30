@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Function Javascript</title>
+</head>
+
+<body>
+    <script>
+        //dinh nghia ham
+        function checkNumber(n) {
+            if (n == 0) {
+                console.log("n la so 0")
+            } else if (n > 0) {
+                console.log("n la so duong")
+            } else {
+                console.log("n la so am")
+            }
+        }
+
+        function kiemTraSoChiaHet(a) {
+            if (a != 0) {
+                console.log(a + " khac 0")
+            }
+
+            if (a % 2 == 0) {
+                console.log(a + " la so chan")
+            } else {
+                console.log(a + " la so le")
+            }
+
+            if (a >= 0) {
+                console.log(a + " la so duong")
+            }
+
+            //so sanh ca gia tri va kieu du lieu
+            if (a === 0) {
+                console.log("a la so 0")
+            }
+        }
+        //goi ham
+        checkNumber(10)
+
+        kiemTraSoChiaHet(0)
+    </script>
+</body>
+
+</html>

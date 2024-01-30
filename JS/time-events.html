@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Time Event Javascript</title>
+</head>
+
+<body>
+    <button type="button"
+            onclick="stopTimeout()">Stop timeout</button>
+
+    <button type="button"
+            onclick="stopInterval()">Stop Interval</button>
+
+
+    <script>
+        //settimeout
+        window.setTimeout(function () {
+            console.log("Goi vao day")
+        }, 5000)
+
+        function hello() {
+            console.log("Hello")
+        }
+        let timeout = setTimeout(hello, 10000)
+
+        function stopTimeout() {
+            clearTimeout(timeout)
+        }
+
+        //set interval
+        let timeInverval = setInterval(function () {
+            console.log(new Date().toUTCString())
+        }, 1000)
+
+        function stopInterval() {
+            window.clearInterval(timeInverval)
+            console.log("Stop interval")
+        }
+    </script>
+</body>
+
+</html>

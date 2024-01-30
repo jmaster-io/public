@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>DOM Javascript</title>
+</head>
+
+<body>
+    <div id="header">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <p>Copyright JavaMaster</p>
+    </div>
+    <script>
+        let bodyChildren = document.body.children
+        console.log(bodyChildren)
+
+        console.log(bodyChildren[0])
+        console.log(bodyChildren[bodyChildren.length - 1])
+
+        console.log(document.body.firstElementChild)
+        console.log(document.body.lastElementChild)
+
+        let footerDivElem = document.body.firstElementChild.nextElementSibling
+        console.log(footerDivElem)
+
+        footerDivElem.firstElementChild.innerHTML = "Hello JavaMaster"
+
+        let divHeader = document.getElementById("header")
+
+        console.log(divHeader.parentElement)
+    </script>
+</body>
+
+</html>

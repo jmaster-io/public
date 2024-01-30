@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript nâng cao với Trung Tâm Java">
+    <title>AJAX = Asynchronous JavaScript And XML.</title>
+</head>
+
+<body>
+    <h1>AJAX = Asynchronous JavaScript And XML</h1>
+    <h2>Cơ chế tạo các request lên server bất đồng bộ bằng javascript để lấy dữ liệu về từ server và xử lý view sau khi html đã tải</h2>
+
+    <script>
+        const BASE_URL = "http://localhost:8080/api";
+        const SEARCH_CATEGORY_URL = BASE_URL + "/category/search"
+
+        let requestBody = {
+            "start": 0,
+            "length": 10
+        }
+
+        let promise = fetch(SEARCH_CATEGORY_URL,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(requestBody)
+            }
+        )
+
+        promise.then(resp => {
+            console.log(resp)
+            if (resp.ok) {
+                return resp.json()
+            }
+        }).catch(err => {
+            console.log(err)
+        }).then(responseDTO => {
+            console.log(responseDTO)
+        })
+
+        loadCategory = async () => {
+            try {
+                let resp = await fetch(SEARCH_CATEGORY_URL,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(requestBody)
+                    }
+                )
+
+                console.log(resp)
+                if (resp.ok) {
+                    let responseDTO = await resp.json()
+                    console.log(responseDTO)
+                }
+            } catch (err) {
+                console.log(err)
+            }
+        }
+
+        loadCategory()
+    </script>
+</body>
+
+</html>

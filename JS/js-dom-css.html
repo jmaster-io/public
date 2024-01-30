@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>DOM Javascript</title>
+
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .fontStyle {
+            font-style: italic;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">Home</a>
+    <a href="#">Home</a>
+
+    <p>Copyright JavaMaster</p>
+
+    <script>
+        let aList = document.getElementsByTagName("a")
+        for (let i = 0; i < aList.length; i++) {
+            aList[i].style.color = "red"
+            aList[i].style.fontSize = "20px"
+        }
+
+        let pList = document.getElementsByTagName("p")
+        //pList[0].classList = "center fontStyle"
+        //pList[0].className = "center fontStyle"
+        pList[0].setAttribute("class", "center fontStyle")
+        pList[0].setAttribute("class", "center")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Callback function Javascript</title>
+</head>
+
+<body>
+    <script>
+        function tong(x, y) {
+            return x + y
+        }
+
+        function hieu(x, y) {
+            return x - y
+        }
+
+        function tinhToan(call) {
+            var kq = call(10, 5)
+            console.log("KQ " + kq)
+        }
+
+        tinhToan(tong); //call = tong
+        tinhToan(hieu); //call =hieu
+
+        tinhToan(
+            (x, y) => {
+                return x * y
+            }
+        )
+
+        tinhToan(
+            function (x, y) {
+                return x / y
+            }
+        )
+
+        //js
+        setTimeout(function () {
+            console.log("Xin chao")
+        }, 500)
+    </script>
+</body>
+
+</html>

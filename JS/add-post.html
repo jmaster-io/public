@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript nâng cao với Trung Tâm Java">
+    <title>AJAX = Asynchronous JavaScript And XML.</title>
+</head>
+
+<body>
+    <h1>AJAX = Asynchronous JavaScript And XML</h1>
+    <h2>Cơ chế tạo các request lên server bất đồng bộ bằng javascript để lấy dữ liệu về từ server và xử lý view sau khi html đã tải</h2>
+
+    <form id="post-form">
+        <input type="text"
+               name="title" />
+        <input type="text"
+               name="categoryId"
+               value="100" />
+        <textarea name="description"></textarea>
+        <input type="file"
+               name="imageFile"
+               accept="image/*" />
+        <input type="button"
+               value="Add"
+               onclick="addPost()">
+    </form>
+    <script>
+
+        const BASE_URL = "http://localhost:8080/api"
+        const ADD_POST_URL = BASE_URL + "/member/post/add"
+
+        addPost = async () => {
+            //let formData = new FormData(document.getElementById("post-form"))
+            let formData = new FormData();
+            formData.append("title", "TEST 2")
+            formData.append("description", "TEST 2")
+            formData.append("categoryId", "100")
+            formData.append("imageFile", document.getElementsByName("imageFile")[0].files[0])
+
+            let token = btoa("0123456789:123456")
+            try {
+                let response = await fetch(ADD_POST_URL, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        Accept: '*/*',
+                        "Authorization": "Basic " + token
+                    }
+                })
+
+                if (response.ok) {
+                    let post = await response.json();//convert to JS Object
+                    console.log(post)
+                }
+            } catch (err) {
+                console.log(err)
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>DOM Javascript</title>
+</head>
+
+<body>
+    <a href="#"
+       onmouseover="changeColor(this)"
+       onmouseout="this.style.color = 'green'"
+       onclick="console.log(this);this.style.display='none'">Click me</a>
+
+    <input type="text"
+           id="name"
+           value=""
+           onkeyup="upperCase(this)">
+
+    <button id="submitBtn">Login</button>
+    <script>
+        function changeColor(self) {
+            self.style.color = "red"
+        }
+
+        function upperCase(self) {
+            let value = self.value;
+            self.value = value.toUpperCase()
+        }
+
+        //co 2 cach khac them event va listener
+        let submitBtn = document.getElementById("submitBtn")
+        // submitBtn.onclick = function () {
+        //     alert("success login")
+        // }
+
+        //cach 3
+        submitBtn.addEventListener("click", function () {
+            alert("success login")
+        })
+    </script>
+</body>
+
+</html>

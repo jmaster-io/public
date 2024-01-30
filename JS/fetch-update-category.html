@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript nâng cao với Trung Tâm Java">
+    <title>AJAX = Asynchronous JavaScript And XML.</title>
+</head>
+
+<body>
+    <h1>AJAX = Asynchronous JavaScript And XML</h1>
+    <h2>Cơ chế tạo các request lên server bất đồng bộ bằng javascript để lấy dữ liệu về từ server và xử lý view sau khi html đã tải</h2>
+
+    <script>
+        const BASE_URL = "http://localhost:8080/api";
+        const UPDATE_CATEGORY_URL = BASE_URL + "/admin/category/update"
+
+        let requestBody = {
+            "id": 104,
+            "name": "TEST 3"
+        }
+
+        updateCategory = async () => {
+            try {
+                let token = btoa("0123456789:123456")
+                let resp = await fetch(UPDATE_CATEGORY_URL,
+                    {
+                        method: "PUT",
+                        headers: {
+                            "Authorization": "Basic " + token,
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(requestBody)
+                    }
+                )
+
+                console.log(resp)
+                if (resp.ok) {
+                    //let responseDTO = await resp.json()
+                    //console.log(responseDTO)
+                    console.log("Success")
+                }
+            } catch (err) {
+                console.log(err)
+            }
+        }
+
+        updateCategory()
+    </script>
+</body>
+
+</html>

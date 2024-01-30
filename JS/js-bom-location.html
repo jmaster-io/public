@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Location Javascript</title>
+</head>
+
+<body>
+    <button onclick="reload()">Refresh</button>
+    <button onclick="openNewWeb('https://trungtamjava.com')">Trung Tam Java</button>
+    <script>
+        function reload() {
+            location.reload()
+        }
+
+        function openNewWeb(url) {
+            location.href = url
+        }
+
+        console.log(location.pathname)
+    </script>
+</body>
+
+</html>

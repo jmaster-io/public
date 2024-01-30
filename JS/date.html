@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Date Javascript</title>
+</head>
+
+<body>
+    <script>
+        var now = new Date();
+        console.log(now)
+        //so ham get
+        console.log(now.getDate())
+        console.log(now.getFullYear())
+        //so ham set
+        now.setFullYear(2019)
+
+        console.log(now)
+
+        //cong ngay
+        now.setFullYear(2020)
+        now.setDate(now.getDate() + 5)
+        console.log(now)
+
+        console.log(typeof (now))
+
+        var date = new Date(2020, 11, 10)
+        console.log(date)
+    </script>
+</body>
+
+</html>

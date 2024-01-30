@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript nâng cao với Trung Tâm Java">
+    <title>AJAX = Asynchronous JavaScript And XML.</title>
+</head>
+
+<body>
+    <h1>AJAX = Asynchronous JavaScript And XML</h1>
+    <h2>Cơ chế tạo các request lên server bất đồng bộ bằng javascript để lấy dữ liệu về từ server và xử lý view sau khi html đã tải</h2>
+
+    <script>
+        const BASE_URL = "http://localhost:8080/api";
+        const ADD_CATEGORY_URL = BASE_URL + "/admin/category/add"
+
+        let requestBody = {
+            "name": "TEST 2"
+        }
+
+        addCategory = async () => {
+            try {
+                let token = btoa("0123456789:123456")
+                let resp = await fetch(ADD_CATEGORY_URL,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Authorization": "Basic " + token,
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(requestBody)
+                    }
+                )
+
+                console.log(resp)
+                if (resp.ok) {
+                    let responseDTO = await resp.json()
+                    console.log(responseDTO)
+                }
+            } catch (err) {
+                console.log(err)
+            }
+        }
+
+        //addCategory()
+
+        //form url encode
+        const ADD_FORM_CATEGORY_URL = BASE_URL + "/admin/category/add-form"
+
+
+        addFormCategory = async () => {
+            try {
+                let token = btoa("0123456789:123456")
+                let resp = await fetch(ADD_FORM_CATEGORY_URL,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Authorization": "Basic " + token,
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: "name=TEST FORM URL 10&id=10"
+                    }
+                )
+
+                console.log(resp)
+                if (resp.ok) {
+                    let responseDTO = await resp.json()
+                    console.log(responseDTO)
+                }
+            } catch (err) {
+                console.log(err)
+            }
+        }
+
+        addFormCategory()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>React JS - Trung Tam Java Master</title>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"
+            crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+            crossorigin></script>
+    <!--su dung babel de bien dich code jsx-->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // const e = React.createElement(
+        //     "h1",
+        //     { onClick: () => { alert("Xin chao Trung Tam Java") }, style: { color: 'red' } },
+        //     "Hello React Js"
+        // )
+        const e = <h1 style={{ color: 'red' }} onClick={() => { alert("Xin chao Trung Tam Java") }}>Hello React Js</h1>
+        ReactDOM.render(e, document.getElementById("root"));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>DOM Javascript</title>
+</head>
+
+<body>
+    <div>
+        <form id="add-user-form">
+            <div>
+                <label>Username:</label>
+                <input type="text"
+                       id="username"
+                       value="" />
+            </div>
+
+            <div>
+                <label>Password:</label>
+                <input type="password"
+                       id="password"
+                       value="" />
+            </div>
+
+            <div>
+                <label>Address:</label>
+                <input type="text"
+                       id="address"
+                       value="" />
+            </div>
+            <div>
+                <label>Gender:</label>
+                <input type="radio"
+                       id="male"
+                       name="gender"
+                       value="M" /> Nam
+                <input type="radio"
+                       id="female"
+                       name="gender"
+                       value="F" /> Nu
+            </div>
+            <div id="male-div"
+                 style="display: none;">
+                <p>Ban chon la nam</p>
+            </div>
+            <div id="female-div"
+                 style="display: none;">
+                <p>Ban chon la nu</p>
+            </div>
+            <div>
+                <button type="button"
+                        id="submit-btn">Add</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        let submitBtn = document.getElementById("submit-btn")
+        let usernameElement = document.getElementById("username")
+        let passwordElement = document.getElementById("password")
+        let addressElement = document.getElementById("address")
+        let maleElementRadio = document.getElementById("male")
+        let femaleElementRadio = document.getElementById("female")
+
+        let maleElementDiv = document.getElementById("male-div")
+        let femaleElementDiv = document.getElementById("female-div")
+
+        maleElementRadio.onchange = function () {
+            if (this.checked) {
+                maleElementDiv.style.display = "block"
+                femaleElementDiv.style.display = "none"
+            }
+        }
+        femaleElementRadio.onchange = function () {
+            if (this.checked) {
+                femaleElementDiv.style.display = "block"
+                maleElementDiv.style.display = "none"
+            }
+        }
+
+
+        submitBtn.onclick = function () {
+
+            if (usernameElement.value.length < 6) {
+                usernameElement.style.backgroundColor = "red"
+                usernameElement.style.borderColor = "red"
+
+                let pElement = document.createElement("p")
+                pElement.innerHTML = "Vui long nhap > 6 ky tu"
+                pElement.style.color = "red"
+
+                usernameElement.parentElement.appendChild(pElement)
+            }
+
+        }
+
+        usernameElement.onkeyup = function () {
+            usernameElement.style.backgroundColor = "white"
+            usernameElement.style.borderColor = "black"
+
+            if (usernameElement.value.length >= 6) {
+                usernameElement.style.backgroundColor = "green"
+                usernameElement.style.borderColor = "green"
+                usernameElement.style.color = "white"
+                if (usernameElement.nextElementSibling) {
+                    usernameElement.parentElement.removeChild(usernameElement.nextElementSibling)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

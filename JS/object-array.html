@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Array Javascript</title>
+</head>
+
+<body>
+    <script>
+        var personList = [
+            { id: 1, name: "A" },
+            { id: 2, name: "B" },
+            { id: 3, name: "C", age: 30 },
+        ];
+
+        for (let i = 0; i < personList.length; i++) {
+            let person = personList[i]
+            //for in
+            for (var k in person) {
+                console.log(person[k])
+            }
+        }
+
+        let p = { id: 4, name: "D" }
+
+        personList.push(p)
+
+        console.log(personList.length)
+        console.log(personList[personList.length - 1].name)
+    </script>
+</body>
+
+</html>

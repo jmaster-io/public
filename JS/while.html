@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>while Javascript</title>
+</head>
+
+<body>
+    <script>
+        //while
+        function hello() {
+            var i = 0
+            while (i < 10) {
+                console.log("Hello " + i)
+                i++
+            }
+        }
+
+        //tinh giai thua
+        function giaiThua(n) {
+            if (n <= 0) {
+                console.log("n! = 1")
+            } else {
+                var tich = 1;
+                var i = 1;
+                while (i <= n) {
+                    tich *= i;
+                    i++
+                }
+                console.log("n! = " + tich)
+            }
+        }
+
+        //vong do while
+        function helloDoWhile() {
+            var i = 0
+            do {
+                console.log("Hello " + i)
+                i++
+                if (i == 5) {
+                    break
+                }
+            } while (i < 10);
+
+            console.log("end")
+        }
+
+        //goi ham
+        hello()
+        giaiThua(10)
+        helloDoWhile()
+    </script>
+</body>
+
+</html>

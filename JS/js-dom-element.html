@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>DOM Javascript</title>
+</head>
+
+<body>
+    <div id="header">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <p>Copyright JavaMaster</p>
+    </div>
+    <script>
+        let divHeader = document.getElementById("header")
+        console.log(divHeader)
+        let aList = divHeader.getElementsByTagName("a")
+        console.log("SL the a : " + aList.length)
+        for (let i = 0; i < aList.length; i++) {
+            aList[i].href = "https://trungtamjava.com";
+            aList[i].setAttribute("title", "Java Master")
+
+            console.log(aList[i].href)
+            console.log(aList[i].getAttribute("href"))
+
+            aList[i].innerHTML = "<b>Java Master</b>"
+            //aList[i].innerText = "<b>Java Master</b>"
+        }
+
+        let divList = document.getElementsByTagName("div")
+        let footerDiv = document.getElementsByClassName("footer")
+
+        let pList = document.getElementsByTagName("p")
+
+        let footerDivList = document.querySelectorAll("div.footer")
+
+        let pFooterList = footerDivList[0].getElementsByTagName("p")
+
+        pFooterList[0].innerHTML = "Trung Tam Java"
+
+    </script>
+</body>
+
+</html>

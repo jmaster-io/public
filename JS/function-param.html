@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Params function Javascript</title>
+</head>
+
+<body>
+    <script>
+        function tong(x, y) {
+            if (y === undefined) {
+                y = 0
+            }
+            return x + y
+        }
+
+        console.log(tong(1, 2))
+        console.log(tong(1))
+
+        function sum() {
+            var tong = 0
+            for (let i = 0; i < arguments.length; i++) {
+                tong += arguments[i]
+            }
+            return tong;
+        }
+
+        var s = sum(1, 3, 4, 5, 6, 7, 8)
+        console.log("TONG____" + s)
+
+        function sumOfArray(arr) {
+            var tong = 0
+            for (let i = 0; i < arr.length; i++) {
+                tong += arr[i]
+            }
+            return tong;
+        }
+
+        console.log("TONG ARRAY____" + sumOfArray([1, 3, 4, 5, 6, 7, 8]))
+
+        //ES6
+        function hieu(x = 1, y = 10) {
+            return y - x
+        }
+
+        console.log(hieu(5))
+
+        ///self - invoke
+        var t = (function thuong(x, y = 1) {
+            return x / y
+        })(10, 5)
+
+        //thuong(10, 5)
+    </script>
+</body>
+
+</html>

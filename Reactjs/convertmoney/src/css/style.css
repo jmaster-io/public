@@ -1,0 +1,17 @@
+.convert{
+    width:300px;
+    height:400px;
+    border: 1px solid #eaeaea;
+    margin:auto;
+    margin-top:50px;
+    padding:15px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+}
+
+.convert__title{
+    color:red;
+    font-size:16px;
+    font-weight:'bold';
+}

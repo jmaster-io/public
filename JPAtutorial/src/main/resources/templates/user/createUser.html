@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Register</title>
+</head>
+
+<body>
+	<h1>Create User</h1>
+	<form method="post" th:action="@{/user/create}">
+		<label>Name: </label>
+		<input name="name" />
+		
+		<label>Age: </label>
+		<input name="age" />
+		
+		<label>Home Address: </label>
+		<input name="homeAddress" />
+		
+		<button type="submit">Create</button>
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Array Javascript</title>
+</head>
+
+<body>
+    <script>
+        var numbers = [1, 4, 5, 2];
+
+        numbers.forEach(function (value, index) {
+            console.log(value + " at index " + index)
+        })
+
+        //
+        let newNumbers = numbers.map((value, index) => {
+            return value * 2
+        })
+
+        newNumbers.forEach(
+            (value) => {
+                console.log("__" + value)
+            }
+        )
+        //filter
+        let evenNumbers = numbers.filter(
+            (value, index) => {
+                return value % 2 == 0
+            }
+        )
+
+        evenNumbers.forEach(
+            (value) => {
+                console.log("#######" + value)
+            }
+        )
+
+        let persons = [
+            { id: 1, name: "A" },
+            { id: 2, name: "A" },
+            { id: 3, name: "B" }
+        ]
+
+        let personsWithNameA = persons.filter(
+            (person, index) => {
+                return person.name == "A"
+            }
+        )
+
+        personsWithNameA.forEach(
+            (person) => {
+                console.log("#######" + person.id + " - " + person.name)
+            }
+        )
+    </script>
+</body>
+
+</html>

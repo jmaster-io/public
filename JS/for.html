@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>for Javascript</title>
+</head>
+
+<body>
+    <script>
+        //while
+        function hello() {
+            for (i = 0; i < 10; i++) {
+                console.log("Hello " + i)
+            }
+        }
+
+        //tinh giai thua
+        function giaiThua(n) {
+            if (n <= 0) {
+                console.log("n! = 1")
+            } else {
+                var tich = 1;
+                for (var i = 1; i <= n; i++) {
+                    tich *= i;
+                }
+                console.log("n! = " + tich)
+            }
+        }
+
+        //vong do while
+        function helloFor() {
+            for (var i = 0; i < 10; i++) {
+                console.log("Hello " + i)
+                if (i == 5) {
+                    break
+                }
+            }
+
+            console.log("end")
+        }
+
+        //goi ham
+        hello()
+        giaiThua(10)
+        helloFor()
+    </script>
+</body>
+
+</html>

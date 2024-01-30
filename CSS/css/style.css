@@ -1,0 +1,81 @@
+h1,p {
+    color: red;
+}
+/* css style file*/
+#p1 {
+    height: 800px;
+    background-color: aqua;
+}
+#go-top {
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    padding: 10px;
+    display: block;
+}
+
+p.highlight, h2.highlight {
+    color: pink;
+    font-weight: bold;
+}
+.red {
+    color:red;
+}
+.green {
+    color:green;
+}
+
+div .quote {
+    font-style: italic;
+    font-size: 20px;
+}
+
+div, p {
+    border: 1px solid red;
+    padding: 10px;
+}
+
+* {
+    font-size: 14px;
+}
+
+input[type="text"] {
+    border: 1px solid green;
+}
+input[type="password"] {
+    border: 2px dotted black;
+}
+
+a {
+    color: blue;
+    font-style: italic;
+}
+
+a:hover {
+    color: orange;
+}
+a:visited {
+    color: red;
+}
+
+a.highlight {
+    font-weight: bold;
+}
+a.highlight:hover {
+    font-weight: normal;
+}
+input {
+    display: block;
+}
+form {
+    display: none;
+}
+
+ul li {
+    display: inline-block;
+    visibility: hidden;
+}

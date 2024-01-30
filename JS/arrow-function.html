@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Arrow function Javascript</title>
+</head>
+
+<body>
+    <script>
+        function tong(x, y) {
+            return x + y
+        }
+
+        var sum = (x, y) => (x + y)
+
+        console.log(sum(10, 20))
+
+        var giaiThua = n => {
+            var tich = 1
+            for (let i = 1; i <= n; i++) {
+                tich *= i
+            }
+            console.log(n + "! = " + tich)
+        }
+
+        giaiThua(10)
+
+        var info = () => {
+            console.log("INFO_____")
+        }
+
+        info()
+    </script>
+</body>
+
+</html>

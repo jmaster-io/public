@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Promise Javascript</title>
+</head>
+
+<body>
+    <script>
+        let promise = new Promise(function (resolve, reject) {
+            //setTimeout(() => resolve("ok"), 1000)
+            setTimeout(() => reject("500 error"), 1000)
+        })
+
+        promise.then(
+            (resp) => {
+                console.log(resp)
+            },
+            (err) => {
+                console.log(err)
+            }
+        )
+
+        promise.then(
+            (resp) => {
+                console.log(resp)
+                return resp;
+            }
+        ).catch(
+            (err) => {
+                console.log(err)
+                throw err
+            }
+        ).then((data) => {
+            console.log("data " + data)
+        }).catch((e) => {
+            console.log("error _ " + e)
+        })
+    </script>
+</body>
+
+</html>

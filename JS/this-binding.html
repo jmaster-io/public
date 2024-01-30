@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>this/binding function Javascript</title>
+</head>
+
+<body>
+    <script>
+        console.log(this)
+
+        function hello(name) {
+            "use strict"
+            console.log(this)
+            console.log("hello " + name)
+            console.log(`hello ${name}`)
+        }
+        hello("Java Master")
+
+        var person1 = {
+            id: 1,
+            info: function () {
+                console.log(this)
+            }
+        }
+        person1.info()
+        ///
+        var person2 = {
+            id: 2
+        }
+        person1.info.call(person2)
+
+        /// binding
+        var helloBinding = hello.bind(person2)
+        helloBinding("TrungTam Java")
+
+        var infoBinding = person1.info.bind(person2)
+        infoBinding()
+
+        window.setTimeout(function () {
+            person1.info()
+        }, 1000)
+
+        var func = person1.info.bind(person1)
+        window.setTimeout(func, 1000)
+    </script>
+
+    <button onclick="console.log(this);func()">Click me</button>
+</body>
+
+</html>

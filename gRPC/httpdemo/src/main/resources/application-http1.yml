@@ -1,0 +1,10 @@
+server:
+  http2:
+    enabled: false
+  port: 8081
+  ssl:
+    enabled: true
+    key-alias: grpc
+    key-store: classpath:grpc.p12
+    key-store-password: 123456
+    key-store-type: PKCS12

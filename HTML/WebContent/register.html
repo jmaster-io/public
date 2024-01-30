@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học HTML cơ bản với Trung Tâm Java">
+    <title>HTML Form Co Ban</title>
+</head>
+
+<body>
+    <form method="POST"
+          action="#">
+        <div>
+            <label>Username:</label>
+            <input type="text"
+                   name="username"
+                   maxlength="20"
+                   required
+                   autofocus
+                   placeholder="Nhap username cua ban" />
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password"
+                   name="password"
+                   required
+                   placeholder="Nhap password cua ban" />
+        </div>
+        <div>
+            <label>Avatar:</label>
+            <input type="file"
+                   name="file"
+                   required />
+        </div>
+        <div>
+            <label>City:</label>
+            <select name="city">
+                <option value="HN">Ha Noi</option>
+                <option value="HCM">Ho Chi Minh</option>
+                <option value="DN">Da nang</option>
+                <option value="HP">Hai Phong</option>
+                <option value="Hanam">Ha Nam</option>
+            </select>
+        </div>
+        <div>
+            <label>Bio:</label>
+            <textarea name="bio">
+               </textarea>
+        </div>
+        <div>
+            <button type="submit">Register</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

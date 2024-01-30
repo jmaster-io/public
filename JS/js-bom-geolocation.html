@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Geo Location (Tìm vị trí hiện tại) Javascript</title>
+</head>
+
+<body>
+    <button onclick="openMap()">Open Map</button>
+    <script>
+        let coords = {};
+        navigator.geolocation.getCurrentPosition(function (position) {
+            console.log(position.coords)
+            coords = position.coords
+        }, function (err) {
+            console.log(err)
+        })
+
+        function openMap() {
+            location.href = "https://www.google.com/maps/@" + coords.latitude + "," + coords.longitude
+        }
+    </script>
+</body>
+
+</html>

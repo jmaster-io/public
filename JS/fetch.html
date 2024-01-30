@@ -1,0 +1,119 @@
+<script>
+    const BASE_URL = "http://localhost:8080/api"
+
+    // const SEARCH_URL = BASE_URL + "/post/search"
+
+    // let requestBody = { categoryId: 1 };
+
+    // let promise = fetch(SEARCH_URL, {
+    //     method: 'POST',
+    //     headers: {
+    //         Accept: "*/*",
+    //         "Content-Type": "application/json;charset=utf-8"
+    //     },
+    //     body: JSON.stringify(requestBody)
+    // }
+    // )
+
+    // promise.then((resp) => {
+    //     console.log(resp)
+    //     if (resp.ok) return resp.json()
+    // }).catch(err => {
+    //     console.log(err)
+    // }).then(json => {
+    //     console.log(json)
+    // })
+
+    // //async await 
+    // loadData = async () => {
+    //     try {
+    //         let response = await fetch(SEARCH_URL, {
+    //             method: 'POST',
+    //             headers: {
+    //                 Accept: "*/*",
+    //                 "Content-Type": "application/json;charset=utf-8"
+    //             },
+    //             body: JSON.stringify(data)
+    //         })
+
+    //         if (response.ok) {
+    //             let data = await response.json();
+    //             console.log(data)
+    //         }
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    // }
+    // loadData()
+    // //thuc hanh viet them moi, sua , xoa.
+
+    // const SEARCH_CATE_URL = BASE_URL + "/category/search"
+    // loadCategoryData = async () => {
+    //     try {
+    //         let token = btoa("0123456789:123456")
+    //         let response = await fetch(SEARCH_CATE_URL, {
+    //             method: 'POST',
+    //             headers: {
+    //                 Accept: "*/*",
+    //                 "Content-Type": "application/json;charset=utf-8",
+    //                 "Authorization": "Basic " + token
+    //             },
+    //             body: JSON.stringify({})
+    //         })
+
+    //         if (response.ok) {
+    //             let data = await response.json();
+    //             console.log(data)
+    //         }
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    // }
+    // loadCategoryData()
+
+    // const ADD_CATE_URL = BASE_URL + "/category/add"
+    // addCategoryData = async () => {
+    //     try {
+    //         let token = btoa("0123456789:123456")
+    //         let response = await fetch(ADD_CATE_URL, {
+    //             method: 'PUT',
+    //             headers: {
+    //                 Accept: "*/*",
+    //                 "Content-Type": "application/json;charset=utf-8",
+    //                 "Authorization": "Basic " + token
+    //             },
+    //             body: JSON.stringify({ name: "A" })
+    //         })
+
+    //         if (response.ok) {
+    //             let data = await response.json();
+    //             console.log(data)
+    //         }
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    // }
+    // addCategoryData()
+
+    const DEL_CATE_URL = BASE_URL + "/admin/category/delete?id=11"
+    deleteCate = async () => {
+        try {
+            let token = btoa("0123456789:123456")
+            let response = await fetch(DEL_CATE_URL, {
+                method: 'DELETE',
+                headers: {
+                    Accept: "*/*",
+                    "Content-Type": "application/json;charset=utf-8",
+                    "Authorization": "Basic " + token
+                },
+            })
+
+            if (response.ok) {
+                console.log("Success")
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    deleteCate()
+</script>

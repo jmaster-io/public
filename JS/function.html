@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Function Javascript</title>
+</head>
+
+<body>
+    <script>
+        //Ham trong javascript
+        /* 
+            Hoc ve ham trong javascript
+        */
+
+        function tong(x, y) {
+            var tong = x + y;
+            console.log(tong)
+            return tong;
+        }
+
+        tong(10, 5);//x  = 10, y = 5
+        console.log(typeof (tong))
+
+        var kq = tong(5, 5);//10
+        console.log("Ket qua: " + kq)
+
+        ///kieu 2
+        var hieu = function (x, y) {
+            return x - y
+        }
+
+        console.log(typeof (hieu))
+        console.log(hieu(10, 5))
+
+        var hamHieu = hieu;
+        var hamTong = tong
+
+        console.log(hamTong(10, 10))
+        console.log(hamHieu(10, 10))
+
+        function counter() {
+            var i = 0;
+            i++;// i = i + 1
+            console.log(i)
+            i--;// i = i - 1
+            i *= 2; //i = i * 2
+            i /= 2; //i = i /2
+        }
+
+        counter()
+    </script>
+</body>
+
+</html>

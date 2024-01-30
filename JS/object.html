@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Object Javascript</title>
+</head>
+
+<body>
+    <script>
+        var personA = {
+            name: "A",
+            age: 20,
+            "address": 'Ha Noi',
+            talk: function () {
+                return this.name + " talk about " + this.address + " . age " + this.age
+            }
+        }
+
+        console.log(personA.name)
+        console.log(personA.address)
+        console.log(personA["age"])
+        console.log(personA.talk())
+
+        var personB = {
+            name: "B",
+            age: 30,
+            "address": 'Ha Nam',
+            talk: function () {
+                return this.name + " talk about " + this.address + " . age " + this.age
+            }
+        }
+        console.log(personB)
+        //them thuoc tinh va ham
+        personB.hometown = "Ha Noi"
+        personA.school = "Bach Khoa Ha Noi"
+
+        console.log(personA.school)
+        console.log(personA.hometown)
+
+        personB.walk = function () {
+            console.log(this.name + " walk around " + this.hometown)
+        }
+
+        personB.walk()
+
+        /// tao doi tuong thu 2 trong java
+        var personC = new Object();
+        personC.name = "C"
+        personC.talk = function () {
+            console.log(this.name + " talk")
+        }
+
+        personC.talk()
+
+        ////
+        var personD = {
+            _name: "D",
+            set name(v) {
+                this._name = v
+            },
+            get name() {
+                return this._name;
+            }
+        }
+        personD.name = "AAA"
+        console.log(personD.name)
+
+    </script>
+</body>
+
+</html>

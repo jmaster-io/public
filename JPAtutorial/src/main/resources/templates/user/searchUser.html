@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Search User</title>
+</head>
+
+<body>
+	<div>
+		<h1>Person Table</h1>
+		<div>
+			<a th:href="@{/user/create}"> Add New </a>
+		</div>
+		<table border="1">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Address</th>
+				<th>Option</th>
+			</tr>
+			<tr th:each="user : ${uList}">
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.name}"></td>
+				<td th:text="${user.age}"></td>
+				<td th:text="${user.homeAddress}"></td>
+				<td><a th:href="@{'/user/delete?id=' + ${user.id} }">
+						Delete </a> <a th:href="@{'/user/edit?id=' + ${user.id} }"> Edit </a>
+				</td>
+				
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

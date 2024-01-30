@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript nâng cao với Trung Tâm Java">
+    <title>AJAX = Asynchronous JavaScript And XML.</title>
+</head>
+
+<body>
+    <h1>AJAX = Asynchronous JavaScript And XML</h1>
+    <h2>Cơ chế tạo các request lên server bất đồng bộ bằng javascript để lấy dữ liệu về từ server và xử lý view sau khi html đã tải</h2>
+
+    <form id="post-form">
+        <input type="text"
+               name="title"
+               value="" />
+        <input type="text"
+               name="categoryId"
+               value="" />
+        <textarea name="description"></textarea>
+        <input type="file"
+               name="imageFile"
+               accept="image/*" />
+        <input type="button"
+               value="Add"
+               onclick="ajaxWithHTTP()">
+    </form>
+
+    <script>
+        const BASE_URL = "http://localhost:8080/api"
+        const ADD_POST_URL = BASE_URL + "/member/post/add"
+
+        function ajaxWithHTTP() {
+            let formData = new FormData(document.getElementById("post-form"))
+            let token = btoa("0123456789:123456")
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText)
+                    console.log(JSON.parse(this.responseText))
+                }
+            }
+
+            xhttp.open("POST", ADD_POST_URL, false);
+            xhttp.setRequestHeader("Authorization", "Basic " + token);
+            xhttp.setRequestHeader("Accept", "*/*");
+
+            xhttp.send(formData);
+        }
+
+        loadCategory = async () => {
+            const SEARCH_CATEGORY_URL = BASE_URL + "/category/search"
+
+            let requestBody = {
+                "start": 0,
+                "length": 10
+            }
+            let token = btoa("0123456789:123456")
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(JSON.parse(this.responseText))
+                }
+            }
+
+            xhttp.open("POST", SEARCH_CATEGORY_URL, false);
+            xhttp.setRequestHeader("Authorization", "Basic " + token);
+            xhttp.setRequestHeader("Content-Type", "application/json");
+
+            xhttp.send(JSON.stringify(requestBody));
+        }
+
+        loadCategory()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>String Javascript</title>
+</head>
+
+<body>
+    <script>
+        var s = "Hello JavaScript. It is easy!"
+
+        console.log(s)
+        var s2 = " Javasript is ES"
+        var s3 = s + s2;
+        var s4 = s.concat(s2)
+
+        console.log(s3)
+        console.log(s4)
+
+        console.log(s4.length)
+
+        // for (i = 0; i < s4.length; i++) {
+        //     console.log(s4.charAt(i))
+        // }
+
+        //tim kiem
+        var index = s.indexOf("Easy");//-1: ko tim thay, index neu ma tim thay
+        console.log(index)
+        var lastIndex = s.lastIndexOf("s");//
+        console.log(lastIndex)
+
+        ///
+        var substr1 = s.substr(1, 10);//tuong tu ham slice
+        console.log(substr1)
+        var substr2 = s.substring(1, 5);
+        console.log(substr2)
+        ///convert string -> mang
+        var arrayStr = s.split(".")
+        for (i = 0; i < arrayStr.length; i++) {
+            console.log(arrayStr[i])
+        }
+        ///replace
+        var sReplace = s.replace("easy", "not so difficult")
+
+        console.log(s)
+        console.log(sReplace)
+    </script>
+</body>
+
+</html>

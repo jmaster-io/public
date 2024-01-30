@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript nâng cao với Trung Tâm Java">
+    <title>AJAX = Asynchronous JavaScript And XML.</title>
+</head>
+
+<body>
+    <h1>AJAX = Asynchronous JavaScript And XML</h1>
+    <h2>Cơ chế tạo các request lên server bất đồng bộ bằng javascript để lấy dữ liệu về từ server và xử lý view sau khi html đã tải</h2>
+
+    <form id="post-form">
+        <input type="text"
+               name="title"
+               value="" />
+        <input type="text"
+               name="categoryId"
+               value="" />
+        <textarea name="description"></textarea>
+        <input type="file"
+               name="imageFile"
+               accept="image/*" />
+        <input type="button"
+               value="Add"
+               onclick="addPost()">
+    </form>
+
+    <script>
+        const BASE_URL = "http://localhost:8080/api"
+        const SEARCH_URL = BASE_URL + "/post/search"
+        let requestBody = { categoryId: 100 };
+
+        let promise = fetch(SEARCH_URL, {
+            method: 'POST',
+            headers: {
+                Accept: "*/*",
+                "Content-Type": "application/json;charset=utf-8"
+            },
+            body: JSON.stringify(requestBody)
+        }
+        )
+
+        promise.then((resp) => {
+            console.log(resp)
+            if (resp.ok)
+                return resp.json()
+        }).catch(err => {
+            console.log(err)
+        }).then(json => {
+            console.log(json)
+            json.data.forEach(post => {
+                let h4 = document.createElement("h4")
+                h4.innerHTML = post.title
+
+                let div = document.createElement("div")
+                div.style = "float:left;display:block;margin: 5px;border: 1px solid grey;"
+
+                div.appendChild(h4)
+
+                post.images.forEach(image => {
+                    let img = document.createElement("img")
+                    img.src = "http://localhost:8080/image/" + image
+                    img.width = 400;
+                    img.height = 280;
+                    div.appendChild(img)
+                })
+
+                document.body.appendChild(div)
+
+            })
+        })
+
+        const ADD_POST_URL = BASE_URL + "/admin/post/add"
+        addPost = async () => {
+            let formData = new FormData(document.getElementById("post-form"))
+
+            let token = btoa("0123456789:123456")
+            try {
+                let response = await fetch(ADD_POST_URL, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        Accept: '*/*',
+                        "Authorization": "Basic " + token
+                    }
+                })
+
+                if (response.ok) {
+                    let post = await response.json();//convert to JS Object
+                    console.log(post)
+                }
+            } catch (err) {
+                console.log(err)
+            }
+        }
+
+        function ajaxWithHTTP() {
+            let formData = new FormData(document.getElementById("post-form"))
+            let token = btoa("0123456789:123456")
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText)
+                }
+            };
+            xhttp.open("POST", ADD_POST_URL, false);
+            xhttp.setRequestHeader("Authorization", "Basic " + token);
+            xhttp.send(formData);
+        }
+    </script>
+</body>
+
+</html>

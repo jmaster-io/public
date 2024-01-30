@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Object Constructor Javascript</title>
+</head>
+
+<body>
+    <script>
+        function Person(id, name, age) {
+            this.id = id
+            this.name = name
+            this.age = age
+            this.info = function () {
+                console.log(this.id + " - " + this.name + " - " + this.age)
+            }
+            this.changeName = (newName) => {
+                this.name = newName
+            }
+        }
+
+        var person1 = new Person(1, "A", 20)
+        var person2 = new Person(2, "B", 30)
+
+        person1.info()
+        person2.info()
+
+        person2.changeName("C")
+        person2.info()
+
+        person1.address = "Hanoi"
+        console.log(person2.address)
+    </script>
+</body>
+
+</html>

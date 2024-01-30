@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Edit User</title>
+</head>
+
+<body>
+	<h1>Edit User</h1>
+	<form method="post" th:action="@{/user/edit}" th:object="${user}">
+		<div>
+			<label>ID:</label>
+			<input th:field="*{id}" readonly />
+		</div>
+
+		<div>
+			<label>Name:</label>
+			<input th:field="*{name}" />
+		</div>
+		
+		<div>
+			<label>Age:</label>
+			<input th:field="*{age}" />
+		</div>
+		
+		<div>
+			<label>Home Address:</label>
+			<input th:field="*{homeAddress}" />
+		</div>
+
+		<button type="submit">Save</button>
+	</form>
+
+</body>
+
+</html>

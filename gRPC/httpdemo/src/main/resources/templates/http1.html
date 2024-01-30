@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTTP/1.1</title>
+</head>
+<body>
+<h1>HTTP/1.1</h1>
+<img style="width:100px" th:each="i: ${#numbers.sequence(0, 200)}"
+     th:src="@{'https://localhost:8081/download/' + ${i}}"/>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học HTML cơ bản với Trung Tâm Java">
+    <title>HTML Form Co Ban</title>
+</head>
+
+<body>
+    <form method="POST"
+          action="http://trungtamjava.com/submit-form">
+        <div>
+            <label>Name:</label>
+            <input type="text"
+                   name="name"
+                   id="name"
+                   disabled
+                   autofocus
+                   placeholder="Nhap ten cua ban" />
+        </div>
+        <div>
+            <label>Age:</label>
+            <input type="number"
+                   name="age"
+                   id="age"
+                   readonly
+                   value="10"
+                   placeholder="Nhap tuoi cua ban" />
+        </div>
+        <div>
+            <label>Gender:</label>
+            <label><input type="radio"
+                       name="gender"
+                       id="male"
+                       checked
+                       value="Male" /> Male</label>
+            <label><input type="radio"
+                       name="gender"
+                       id="female"
+                       value="Female" /> FeMale</label>
+        </div>
+        <div>
+            <label>Favourite:</label>
+            <label><input type="checkbox"
+                       name="fav"
+                       checked
+                       value="Game" /> Game</label>
+            <label><input type="checkbox"
+                       name="fav"
+                       value="Code" /> Code</label>
+        </div>
+        <div>
+            <input type="hidden"
+                   value="1" />
+        </div>
+        <div>
+            <input type="submit"
+                   disabled
+                   value="Register" />
+            <input type="button"
+                   value="Button" />
+            <input type="reset"
+                   value="Reset" />
+        </div>
+        <div>
+            <button type="submit">Register</button>
+            <button type="button">Button</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

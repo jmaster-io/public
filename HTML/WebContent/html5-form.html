@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học HTML cơ bản với Trung Tâm Java">
+    <title>HTML Form Co Ban</title>
+</head>
+
+<body>
+    <form method="POST"
+          action="#">
+        <div>
+            <label>Color:</label>
+            <input type="color"
+                   name="yourcolor" />
+        </div>
+        <div>
+            <label>Range:</label>
+            <input type="range"
+                   name="range"
+                   min="0"
+                   max="100"
+                   required />
+        </div>
+        <div>
+            <label>Number:</label>
+            <input type="number"
+                   name="number"
+                   step="10"
+                   min="0"
+                   max="100"
+                   required />
+        </div>
+        <div>
+            <label>Datetime:</label>
+            <input type="date"
+                   name="datetime"
+                   required />
+        </div>
+        <div>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

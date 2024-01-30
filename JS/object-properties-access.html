@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Object Javascript</title>
+</head>
+
+<body>
+    <script>
+        var personA = {
+            name: "A",
+            age: 20,
+            address: 'Ha Noi',
+            talk: function () {
+                return this.name + " talk about " + this.address + " . age " + this.age
+            }
+        }
+
+        console.log(personA.name)
+        console.log(personA.talk())
+
+        const { name, age } = personA
+        console.log(name)
+        console.log(age)
+
+        let { talk } = personA
+        console.log(talk.bind(personA)())
+
+        const { address, ...other } = personA
+        console.log(address)
+        console.log(other)
+        console.log(other.name)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java JMaster.io">
+    <title>Array Destruction Javascript</title>
+</head>
+
+<body>
+    <script>
+        let numbers = [1, 2, 3, 4, 5]
+        console.log(numbers[0])
+
+        let [one, two, ...rest] = numbers
+
+        console.log(one)
+        console.log(two)
+        console.log(rest)
+
+        let [first = 1, second] = [];
+
+        console.log(first)
+
+        let [number1, number2] = new Set([1, 2, 3])
+        console.log(number2)
+
+        let [a, b, c] = "abc"
+        console.log(a)
+
+        const user = {};
+        [user.name, user.address] = "JMaster Hanoi".split(" ");
+
+        console.log(user)
+    </script>
+</body>
+
+</html>

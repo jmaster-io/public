@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>DOM Javascript</title>
+</head>
+
+<body>
+    <div>
+        <form id="add-user-form">
+            <div>
+                <label>Username:</label>
+                <input type="text"
+                       id="username"
+                       value="" />
+            </div>
+
+            <div>
+                <label>Password:</label>
+                <input type="password"
+                       id="password"
+                       value="" />
+            </div>
+            <div>
+                <button type="button"
+                        id="submit-btn">Add</button>
+            </div>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody id="body-table">
+                <tr>
+                    <td>Js</td>
+                    <td>123</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let submitBtn = document.getElementById("submit-btn")
+        let usernameElement = document.getElementById("username")
+        let passwordElement = document.getElementById("password")
+
+        submitBtn.onclick = function () {
+            let uName = usernameElement.value;
+            let pass = passwordElement.value;
+            let person = {
+                name: uName,
+                password: pass
+            }
+            createTr(person)
+        }
+
+        let jsonObject = [
+            {
+                name: 'Java Master',
+                password: '123456'
+            },
+            {
+                name: 'Trung Tam Java',
+                password: '123456'
+            },
+            {
+                name: 'javamaster.net',
+                password: '123456'
+            }
+        ]
+
+        for (let i = 0; i < jsonObject.length; i++) {
+            createTr(jsonObject[i])
+        }
+
+        function createTr(person) {
+            let trElement = document.createElement("tr")
+
+            let tdElement1 = document.createElement("td")
+            tdElement1.innerHTML = person.name
+
+            let tdElement2 = document.createElement("td")
+            tdElement2.innerHTML = person.password
+
+            trElement.appendChild(tdElement1)
+            trElement.appendChild(tdElement2)
+
+            let tdBody = document.getElementById("body-table")
+            tdBody.appendChild(trElement)
+        }
+    </script>
+</body>
+
+</html>

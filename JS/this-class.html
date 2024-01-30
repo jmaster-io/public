@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>this/binding function Javascript</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(id) {
+                this._id = id
+            }
+            info() {
+                console.log("ID: " + this._id)
+            }
+            infoArrow = () => {
+                console.log("ID Arrow: " + this._id)
+            }
+        }
+        let person = new Person(10)
+
+        setTimeout(person.info.bind(person), 500)
+        setTimeout(person.infoArrow, 500)
+    </script>
+    <button onclick="person.infoArrow()">Click me</button>
+</body>
+
+</html>

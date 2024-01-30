@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Let/Const Javascript</title>
+</head>
+
+<body>
+    <script>
+        const PI = 3.14
+
+        function tong(x, y) {
+            var tong = PI + x + y
+            //PI = 3.50
+            return tong
+        }
+
+        console.log(tong(4, 1))
+        //console.log(x)
+        const person = { name: 'A', age: 20 }
+        //person = {};
+        person.name = "B"
+        const arr = [1, 2, 3]
+        arr[0] = 4
+
+        function vongLap() {
+            let i = 10;
+            for (var i = 0; i < 100; i++) {
+                console.log(i)
+            }
+            console.log("____" + i)
+        }
+
+        vongLap()
+
+        let k = 10;
+        //var k = 20;
+        console.log(k)
+    </script>
+</body>
+
+</html>

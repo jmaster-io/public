@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>class Javascript</title>
+</head>
+
+<body>
+    <script>
+        //ES6
+        class Person {
+            constructor(id, name) {
+                this._id = id
+                this._name = name
+            }
+            info() {
+                console.log(this._id + " - " + this._name)
+            }
+            static hello() {
+                console.log("HELLO!!!")
+            }
+            set id(id) {
+                this._id = id
+            }
+            get id() {
+                return this._id
+            }
+        }
+
+        let person1 = new Person(1, "A")
+        let person2 = new Person(2, "B")
+
+        person1.info()
+        person2.info()
+        Person.hello()
+        //person1.hello()
+        person1.id = 10
+        console.log(person1.id)
+
+        //ke thua
+        class Student extends Person {
+            constructor(lop, id, name) {
+                super(id, name)
+                this._lop = lop
+            }
+            info() {
+                super.info()
+                console.log(this._lop)
+            }
+        }
+
+        let student = new Student("Lop 1", 1, "A")
+        student.info()
+    </script>
+</body>
+
+</html>

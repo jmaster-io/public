@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Error Javascript</title>
+</head>
+
+<body>
+    <script>
+        function chia(x, y) {
+            if (y == 0) {
+                throw "y = 0"
+            }
+            return x / y;
+        }
+        try {
+            var thuong = chia(10, 5)
+            console.log(thuong)
+        } catch (err) {
+            console.log("Loi chia 0 : " + err)
+        } finally {
+            console.log("Finally.")
+        }
+    </script>
+</body>
+
+</html>

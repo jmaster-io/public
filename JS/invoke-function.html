@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Học Javascript cơ bản với Trung Tâm Java">
+    <title>Invoke function Javascript</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            id: 1,
+            name: "A",
+            info: function () {
+                console.log(this.id + " - " + this.name)
+            },
+            fullInfo: function (city, country) {
+                console.log(this.id + " - " + this.name + " - " + city + " - " + country)
+            }
+        }
+
+        person.info()
+        person.fullInfo("Hanoi", "VN")
+
+        var person2 = {
+            id: 2, name: "B"
+        }
+        //call
+        person.info.call(person2)
+        person.fullInfo.call(person2, "HCM", "Vn")
+        //apply
+        person.info.apply(person2)
+        person.fullInfo.apply(person2, ["HCM", "Vn"])
+
+    </script>
+</body>
+
+</html>
