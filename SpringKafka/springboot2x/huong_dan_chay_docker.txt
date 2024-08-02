@@ -1,0 +1,4 @@
+#huong dan chay docker-compose
+docker-compose up -d --build
+
+#DOI CÁC localhost -> ${HOST_IP_ADDRESS}
