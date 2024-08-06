@@ -11,7 +11,7 @@
     </parent>
     <groupId>jmaster.io</groupId>
     <artifactId>statisticservice</artifactId>
-    <version>1.0</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>statisticservice</name>
     <description>webflux project for Spring Boot</description>
     <properties>

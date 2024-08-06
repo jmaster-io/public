@@ -11,7 +11,7 @@
     </parent>
     <groupId>jmaster.io</groupId>
     <artifactId>notificationservice</artifactId>
-    <version>1.0</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>notificationservice</name>
     <description>webflux project for Spring Boot</description>
     <properties>
