@@ -6,8 +6,7 @@ Video tài liệu:
 
 + https://www.youtube.com/watch?v=DgGtpCp7aQk&list=PLsfLgp1K1xQ6laPt_zYpDGwZk6MTx7jn0
 
-Bài tập 
-https://github.com/jmaster-io/public/tree/main/SpringMVC
++ Code https://github.com/jmaster-io/public/tree/main/SpringMVC
 
 
 CÁCH THỨC HỌC & CÔNG VIỆC CẦN LÀM:
